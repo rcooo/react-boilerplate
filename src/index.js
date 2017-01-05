@@ -1,10 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './App';
+import Root from './Root';
 
-const root = document.getElementById('{{PKG_NAME}}')
+const root = document.getElementById('root');
 
 ReactDOM.render((
-    <App />
-), root)
+    <Root />
+), root);
+
+if (module.hot) {
+    module.hot.accept();
+    module.hot.dispose(function() {
+        
+    });
+}
