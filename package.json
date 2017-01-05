@@ -1,0 +1,27 @@
+{
+  "name": "react-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dashboard -- webpack-dev-server --config ./webpack.config.dev.js"
+  },
+  "author": "František Mazuch",
+  "engines": {
+    "node": ">=6"
+  },
+  "devDependencies": {
+    "babel-loader": "^6.2.10",
+    "babel-preset-react": "^6.16.0",
+    "install": "^0.8.4",
+    "webpack": "2.2.0-rc.3",
+    "webpack-dashboard": "^0.2.1",
+    "webpack-dev-middleware": "^1.9.0",
+    "webpack-dev-server": "^2.2.0-rc.0",
+    "webpack-hot-middleware": "^2.15.0"
+  },
+  "dependencies": {
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
+  }
+}
