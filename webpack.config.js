@@ -1,12 +1,13 @@
 var path = require('path');
 var webpack = require('webpack');
-var DashboardPlugin = require('webpack-dashboard/plugin')
+
+var isProd = (process.env.NODE_ENV === 'production');
 
 var srcDir = path.resolve(__dirname, './src');
 var buildDir = path.resolve(__dirname, './build');
 
 module.exports = {
-    devtool: 'eval-source-map',
+    devtool: false,
 
     context: srcDir,
 
@@ -34,7 +35,14 @@ module.exports = {
         extensions: ['.js', '.jsx']
     },
 
-    plugins: [
-        new DashboardPlugin({ port: 3001 }),
+    plugins: isProd ? [
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                screw_ie8: true, // eslint-disable-line camelcase
+                warnings: false, // Because uglify reports irrelevant warnings.
+            },
+        }),
+    ] : [
+
     ],
 }
